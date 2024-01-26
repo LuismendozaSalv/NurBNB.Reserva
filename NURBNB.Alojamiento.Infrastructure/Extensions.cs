@@ -30,6 +30,7 @@ namespace NURBNB.Alojamiento.Infrastructure
 		public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration, bool isDevelopment)
 		{
 			services.AddApplicaction();
+
 			services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 			services.AddConsulConfig(configuration);
 			AddDatabase(services, configuration, isDevelopment);
