@@ -23,7 +23,7 @@ jobs:
             fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - uses: actions/checkout@v4.1.1
         with: 
-          repository: klbraguilar/NURBNB.IntegrationEvents
+          repository: LuismendozaSalv/NURBNB.IntegrationEvents
           ref: master
           path: NURBNB.IntegrationEvents
       - name: Setup .NET
@@ -59,7 +59,7 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-            .\.sonar\scanner\dotnet-sonarscanner begin /k:"klbraguilar_NURBNB.Alojamiento" /o:"klbraguilar" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+            .\.sonar\scanner\dotnet-sonarscanner begin /k:"LuismendozaSalv_NURBNB.Alojamiento" /o:"luismendozasalv" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
             dotnet build --no-restore
             dotnet test --no-build --verbosity normal
             dotnet-coverage collect 'dotnet test NURBNB.Alojamiento.Test' -f xml  -o 'coverage.xml'
