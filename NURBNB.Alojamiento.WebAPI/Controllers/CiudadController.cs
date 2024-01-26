@@ -8,6 +8,7 @@ using NURBNB.Alojamiento.Application.UseCases.Pais.Query.GetPaisList;
 
 namespace NURBNB.Alojamiento.WebAPI.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class CiudadController : ControllerBase

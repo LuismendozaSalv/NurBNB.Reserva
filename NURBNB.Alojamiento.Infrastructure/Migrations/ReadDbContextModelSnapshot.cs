@@ -234,6 +234,10 @@ namespace NURBNB.Alojamiento.Infrastructure.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("titulo");
 
+                    b.Property<Guid>("UsuarioId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("usuarioId");
+
                     b.HasKey("Id");
 
                     b.ToTable("propiedad");

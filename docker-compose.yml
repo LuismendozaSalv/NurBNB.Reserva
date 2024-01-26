@@ -3,7 +3,7 @@ services:
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     container_name: sql_server2022
     ports: # not actually needed, because the two services are on the same network
-      - "1433:1433" 
+      - "1433:1433"
     environment:
       - ACCEPT_EULA=y
       - SA_PASSWORD=A&VeryComplex123Password
@@ -27,7 +27,7 @@ services:
     image: klbraguilar/nurbnb-usuario
     container_name: web_api_usuario
     ports:
-      - "8001:80"  
+      - "8001:80"
 
 networks:
   default:

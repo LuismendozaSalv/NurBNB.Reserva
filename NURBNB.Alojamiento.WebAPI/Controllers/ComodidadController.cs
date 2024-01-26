@@ -6,6 +6,7 @@ using NURBNB.Alojamiento.Application.UseCases.Comodidad.AgregarComodidad.Command
 
 namespace NURBNB.Alojamiento.WebAPI.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class ComodidadController : ControllerBase

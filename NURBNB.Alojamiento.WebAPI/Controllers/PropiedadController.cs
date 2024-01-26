@@ -16,16 +16,16 @@ using NURBNB.Alojamiento.Application.UseCases.Reserva.Query;
 
 namespace NURBNB.Alojamiento.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class PropiedadController : ControllerBase
-    {
+	[Route("api/[controller]")]
+	[ApiController]
+	public class PropiedadController : ControllerBase
+	{
 
-        private readonly IMediator _mediator;
-        public PropiedadController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+		private readonly IMediator _mediator;
+		public PropiedadController(IMediator mediator)
+		{
+			_mediator = mediator;
+		}
 
         //[HttpPost]
         //[Route("CrearPropiedad")]
