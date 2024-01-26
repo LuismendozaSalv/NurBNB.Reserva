@@ -14,6 +14,7 @@ namespace NURBNB.Alojamiento.Application
             services.AddScoped<ICiudadFactory, CiudadFactory>();
             services.AddSingleton<IPropiedadFactory, PropiedadFactory>();
             services.AddSingleton<IComodidadFactory, ComodidadFactory>();
+            services.AddSingleton<IReservaPropiedadFactory, ReservaPropiedadFactory>();
             return services;
         }
     }

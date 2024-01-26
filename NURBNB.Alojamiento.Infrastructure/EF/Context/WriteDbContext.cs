@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NURBNB.Alojamiento.Domain.Model.Alojamiento;
+using NURBNB.Alojamiento.Domain.Model.Reserva;
 using NURBNB.Alojamiento.Infrastructure.EF.Config;
 using NURBNB.Alojamiento.Infrastructure.EF.ReadModel;
 using Restaurant.SharedKernel.Core;
@@ -22,6 +23,7 @@ namespace NURBNB.Alojamiento.Infrastructure.EF.Context
         public virtual DbSet<Direccion> Direccion { set; get; }
         public virtual DbSet<Comodidad> Comodidad { set; get; }
         public virtual DbSet<PropiedadComodidad> PropiedadComodidad { set; get; }
+        public virtual DbSet<ReservaPropiedad> ReservaPropiedad { set; get; }
 
         public WriteDbContext(DbContextOptions<WriteDbContext> options) : base(options)
         {
@@ -40,6 +42,9 @@ namespace NURBNB.Alojamiento.Infrastructure.EF.Context
             var propiedadConfig = new PropiedadConfig();
             modelBuilder.ApplyConfiguration<Propiedad>(propiedadConfig);
             modelBuilder.ApplyConfiguration<PropiedadComodidad>(propiedadConfig);
+
+            var reservaConfig = new ReservasConfig();
+            modelBuilder.ApplyConfiguration<ReservaPropiedad>(reservaConfig);
 
             modelBuilder.Ignore<DomainEvent>();
         }

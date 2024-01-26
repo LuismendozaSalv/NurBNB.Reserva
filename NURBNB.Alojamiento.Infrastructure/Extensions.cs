@@ -55,6 +55,7 @@ namespace NURBNB.Alojamiento.Infrastructure
             services.AddScoped<IComodidadRepository, ComodidadRepository>();
             services.AddScoped<IDireccionRepository, DireccionRepository>();
             services.AddScoped<IPropiedadComodidadRepository, PropiedadComodidadRepository>();
+            services.AddScoped<IReservaPropiedadRepository, ReservaPropiedadRepository>();
 
             using var scope = services.BuildServiceProvider().CreateScope();
             if (!isDevelopment)
@@ -67,7 +68,7 @@ namespace NURBNB.Alojamiento.Infrastructure
             if (!readContext.Database.GetPendingMigrations().Any() && 
                 readContext.Database.GetMigrations().Any())
             {
-                InitDatabase(services);
+                //InitDatabase(services);
             }
         }
 
@@ -104,16 +105,16 @@ namespace NURBNB.Alojamiento.Infrastructure
 
         private static IServiceCollection AddMassTransitWithRabbitMq(IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddScoped<IBusService, MassTransitBusService>();
+            services.AddScoped<IBusService, MassTransitBusService>();
 
             var serviceName = configuration.GetValue<string>("ServiceName");
             var rabbitMQSettings = configuration.GetSection(nameof(RabbitMQSettings)).Get<RabbitMQSettings>();
 
             services.AddMassTransit(configure =>
             {
-                configure.AddConsumer<ReservaFinalizadaConsumer>();
-                configure.AddConsumer<ReservaRegistradaConsumer>();
-                configure.AddConsumer<CheckOutFinalizadoConsumer>();
+                //configure.AddConsumer<ReservaFinalizadaConsumer>();
+                //configure.AddConsumer<ReservaRegistradaConsumer>();
+                //configure.AddConsumer<CheckOutFinalizadoConsumer>();
                 configure.UsingRabbitMq((context, configurator) =>
                 {
                     bool IsRunningInContainer = bool.TryParse(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER"), out var inDocker) && inDocker;

@@ -15,18 +15,18 @@ namespace NURBNB.Alojamiento.WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CrearComodidadCommand command)
-        {
-            try
-            {
-                var comodidadId = await _mediator.Send(command);
-                return Ok(comodidadId);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //[HttpPost]
+        //public async Task<IActionResult> Post([FromBody] CrearComodidadCommand command)
+        //{
+        //    try
+        //    {
+        //        var comodidadId = await _mediator.Send(command);
+        //        return Ok(comodidadId);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
     }
 }

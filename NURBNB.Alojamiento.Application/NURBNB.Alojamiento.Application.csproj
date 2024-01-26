@@ -16,8 +16,4 @@
     <ProjectReference Include="..\NURBNB.IntegrationEvents\NURBNB.IntegrationEvents\NURBNB.IntegrationEvents.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="EventHandler\" />
-  </ItemGroup>
-
 </Project>

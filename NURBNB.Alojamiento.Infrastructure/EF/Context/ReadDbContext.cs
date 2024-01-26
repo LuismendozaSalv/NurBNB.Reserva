@@ -5,7 +5,7 @@ using NURBNB.Alojamiento.Infrastructure.EF.ReadModel;
 
 namespace NURBNB.Alojamiento.Infrastructure.EF.Context
 {
-    internal class ReadDbContext : DbContext
+    public class ReadDbContext : DbContext
     {
         public virtual DbSet<PaisReadModel> Pais { set; get; }
         public virtual DbSet<CiudadReadModel> Ciudad { set; get; }
@@ -13,6 +13,7 @@ namespace NURBNB.Alojamiento.Infrastructure.EF.Context
         public virtual DbSet<DireccionReadModel> Direccion { set; get; }
         public virtual DbSet<ComodidadReadModel> Comodidad { set; get; }
         public virtual DbSet<PropiedadComodidadReadModel> PropiedadComodidad { set; get; }
+        public virtual DbSet<ReservaPropiedadReadModel> ReservaPropiedad { set; get; }
         public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options)
         {
         }

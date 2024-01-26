@@ -17,29 +17,29 @@ namespace NURBNB.Alojamiento.WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CrearCiudadCommand command)
-        {
-            try
-            {
-                var ciudadId = await _mediator.Send(command);
-                return Ok(ciudadId);
-            } catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+        //[HttpPost]
+        //public async Task<IActionResult> Post([FromBody] CrearCiudadCommand command)
+        //{
+        //    try
+        //    {
+        //        var ciudadId = await _mediator.Send(command);
+        //        return Ok(ciudadId);
+        //    } catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
             
-        }
+        //}
 
-        [HttpGet]
-        public async Task<IActionResult> SearchCities(string searchTerm = "")
-        {
-            var items = await _mediator.Send(new GetCiudadQueryList()
-            {
-                SearchTerm = searchTerm
-            });
+        //[HttpGet]
+        //public async Task<IActionResult> SearchCities(string searchTerm = "")
+        //{
+        //    var items = await _mediator.Send(new GetCiudadQueryList()
+        //    {
+        //        SearchTerm = searchTerm
+        //    });
 
-            return Ok(items);
-        }
+        //    return Ok(items);
+        //}
     }
 }

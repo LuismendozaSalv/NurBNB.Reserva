@@ -15,30 +15,30 @@ namespace NURBNB.Alojamiento.WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CrearPaisCommand command)
-        {
-            try
-            {
-                var paisId = await _mediator.Send(command);
-                return Ok(paisId);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
+        //[HttpPost]
+        //public async Task<IActionResult> Post([FromBody] CrearPaisCommand command)
+        //{
+        //    try
+        //    {
+        //        var paisId = await _mediator.Send(command);
+        //        return Ok(paisId);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
 
-            }
-        }
+        //    }
+        //}
 
-        [HttpGet]
-        public async Task<IActionResult> SearchCountries(string searchTerm = "")
-        {
-            var items = await _mediator.Send(new GetPaisQueryList ()
-            {
-                SearchTerm = searchTerm
-            });
+        //[HttpGet]
+        //public async Task<IActionResult> SearchCountries(string searchTerm = "")
+        //{
+        //    var items = await _mediator.Send(new GetPaisQueryList ()
+        //    {
+        //        SearchTerm = searchTerm
+        //    });
 
-            return Ok(items);
-        }
+        //    return Ok(items);
+        //}
     }
 }
